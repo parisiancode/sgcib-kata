@@ -1,15 +1,19 @@
 public class KataRun {
 
+    public static final String FOO = "Foo";
+    public static final String BAR = "Bar";
+    public static final String QIX = "Qix";
+
     private String divide(int i) {
         String str = "";
         if (i % 3 == 0) {
-            str = "Foo";
+            str += FOO;
         }
         if (i % 5 == 0) {
-            str += "Bar";
+            str += BAR;
         }
         if (i % 7 == 0) {
-            str += "Qix";
+            str += QIX;
         }
         return str;
     }
@@ -20,13 +24,13 @@ public class KataRun {
         for (char c : init.toCharArray()) {
             switch (c) {
                 case '3':
-                    str += "Foo";
+                    str += FOO;
                     break;
                 case '5':
-                    str += "Bar";
+                    str += BAR;
                     break;
                 case '7':
-                    str += "Qix";
+                    str += QIX;
                     break;
                 default:
                     break;
