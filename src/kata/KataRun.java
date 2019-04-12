@@ -1,6 +1,10 @@
+package kata;
+
+import java.io.PrintStream;
+
 public class KataRun {
 
-    public static final String FOO = "Foo";
+	public static final String FOO = "Foo";
     public static final String BAR = "Bar";
     public static final String QIX = "Qix";
 
@@ -20,31 +24,32 @@ public class KataRun {
 
     private String contain(int i, String divide) {
         String init = String.valueOf(i);
-        String str = "";
+        StringBuilder sb = new StringBuilder();
         for (char c : init.toCharArray()) {
             switch (c) {
                 case '3':
-                    str += FOO;
+                    sb.append(FOO);
                     break;
                 case '5':
-                    str += BAR;
+                    sb.append(BAR);
                     break;
                 case '7':
-                    str += QIX;
+                    sb.append(QIX);
                     break;
                 default:
                     break;
             }
         }
-        return (str.isEmpty() && divide.isEmpty()) ? init : divide + str;
+        return (sb.toString().isEmpty() && divide.isEmpty()) ? init : divide + sb.toString();
     }
 
     public void browseNumber() {
+    	PrintStream out = System.out;
         for (int i = 1; i <= 100; ++i) {
             if (i == 100) {
-                System.out.print(contain(i, divide(i)));
+                out.print(contain(i, divide(i)));
             } else {
-                System.out.println(contain(i, divide(i)));
+                out.println(contain(i, divide(i)));
             }
         }
     }

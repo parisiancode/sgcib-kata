@@ -1,3 +1,4 @@
+package kata;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
@@ -7,6 +8,8 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import kata.KataRun;
 
 public class KataRunTest {
 
@@ -22,7 +25,7 @@ public class KataRunTest {
     }
 
     @Test
-    public void testBrowseNumber() {
+    public void browseNumber() {
         // Retrieve outputStream
         OutputStream os = new ByteArrayOutputStream();
         PrintStream ps = new PrintStream(os);
@@ -35,16 +38,16 @@ public class KataRunTest {
         // Is length ok ?
         assertEquals(100, tokens.length);
         // Given examples
-        testGivenExample(tokens);
+        givenExample(tokens);
         // Updated rules
-        testUpdatedRules(tokens);
+        updatedRules(tokens);
 
         // Restore normal output
         PrintStream originalOut = System.out;
         System.setOut(originalOut);
     }
 
-    private void testUpdatedRules(String[] tokens) {
+    private void updatedRules(String[] tokens) {
         assertEquals("FooBar", tokens[50]);
         assertEquals("BarFoo", tokens[52]);
         assertEquals("FooQix", tokens[20]);
@@ -53,7 +56,7 @@ public class KataRunTest {
         assertEquals("FooFooFoo", tokens[32]);
     }
 
-    private void testGivenExample(String[] tokens) {
+    private void givenExample(String[] tokens) {
         assertEquals("1", tokens[0]);
         assertEquals("2", tokens[1]);
         assertEquals("FooFoo", tokens[2]);
