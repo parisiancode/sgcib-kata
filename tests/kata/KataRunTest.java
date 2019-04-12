@@ -43,8 +43,7 @@ public class KataRunTest {
         updatedRules(tokens);
 
         // Restore normal output
-        PrintStream originalOut = System.out;
-        System.setOut(originalOut);
+        System.setOut(System.out);
     }
 
     private void updatedRules(String[] tokens) {

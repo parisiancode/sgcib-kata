@@ -1,7 +1,5 @@
 package kata;
 
-import java.io.PrintStream;
-
 public class KataRun {
 
 	public static final String FOO = "Foo";
@@ -44,12 +42,11 @@ public class KataRun {
     }
 
     public void browseNumber() {
-    	PrintStream out = System.out;
         for (int i = 1; i <= 100; ++i) {
             if (i == 100) {
-                out.print(contain(i, divide(i)));
+                System.out.print(contain(i, divide(i)));
             } else {
-                out.println(contain(i, divide(i)));
+                System.out.println(contain(i, divide(i)));
             }
         }
     }
