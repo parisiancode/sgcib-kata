@@ -20,5 +20,6 @@ bin/*
 
 # Eclipse
 .settings
+/.metadata/
 .classpath
 .project
